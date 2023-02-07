@@ -52,54 +52,55 @@ public class BotService extends TelegramLongPollingBot {
 
         String msg;
 
-        if (chat.getInputMsg().equals("Вернуться в предыдущее меню")){
+        if (chat.getInputMsg().equals("Вернуться в предыдущее меню")) {
             msg = chat.getPreviousMsg();
         } else {
             msg = chat.getInputMsg();
         }
 
         switch (msg) {
-            case "/start" -> {
+            case "/start":
                 sendText = StartButtons.buttons(sendMessage);
                 chat.setPreviousMsg("/start");
-            }
-            case "Новости" -> {
+                break;
+            case "Новости":
                 sendText = "Новости";
                 chat.setPreviousMsg("/start");
-            }
-            case "Прайсы" -> {
+                break;
+            case "Прайсы":
                 sendText = PriceButtons.buttons(sendMessage);
                 chat.setPreviousMsg("/start");
-            }
-            case "Акции" -> {
+                break;
+            case "Акции":
                 sendText = Promo.buttons(sendMessage);
                 chat.setPreviousMsg("/start");
-            }
-            case "Регламенты" -> {
+                break;
+            case "Регламенты":
                 sendText = Regulations.buttons(sendMessage);
                 chat.setPreviousMsg("/start");
-            }
-            case "Инструкции" -> {
+                break;
+            case "Инструкции":
                 sendText = Instructions.buttons(sendMessage);
                 chat.setPreviousMsg("/start");
-            }
-            case "Мотивации" -> {
+                break;
+            case "Мотивации":
                 sendText = Motivations.buttons(sendMessage);
                 chat.setPreviousMsg("/start");
-            }
-            case "Кредиты" -> {
+                break;
+            case "Кредиты":
                 sendText = Credits.buttons(sendMessage);
                 chat.setPreviousMsg("/start");
-            }
-            case "Учебный материал" -> {
+                break;
+            case "Учебный материал":
                 sendText = Tutorial.buttons(sendMessage);
                 chat.setPreviousMsg("/start");
-            }
-            case "Ваши предложения по улучшению Бота" -> {
+                break;
+            case "Ваши предложения по улучшению Бота":
                 sendText = "Ваши предложения и пожелания";
                 chat.setPreviousMsg("/start");
-            }
-            default -> sendText = ERROR_TEXT;
+                break;
+            default:
+                sendText = ERROR_TEXT;
         }
 
         sendMessage.setChatId(chat.getChatId());
