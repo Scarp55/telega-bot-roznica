@@ -12,10 +12,9 @@ public class Instructions {
     public static String buttons(SendMessage sendMessage) {
         int row = 4;
         KeyboardRow[] keyboardRows = setKeyboardRows(sendMessage, row);
-        keyboardRows[0].add(new KeyboardButton("По шинам"));
-        keyboardRows[1].add(new KeyboardButton("По дискам"));
-        keyboardRows[2].add(new KeyboardButton("По услугам"));
-        keyboardRows[3].add(new KeyboardButton("Вернуться в предыдущее меню"));
+        keyboardRows[0].add(new KeyboardButton("Для сервиса"));
+        keyboardRows[1].add(new KeyboardButton("Для продавцов"));
+        keyboardRows[2].add(new KeyboardButton("Вернуться в предыдущее меню"));
         setKeyboard(sendMessage, keyboardRows, row);
         return NEXT;
     }

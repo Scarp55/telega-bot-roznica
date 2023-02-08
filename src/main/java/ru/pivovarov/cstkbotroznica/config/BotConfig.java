@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 @Data
 public class BotConfig {
 
-    @Value("${bot.nameTest}")
+    @Value("${bot.name}")
     String botName;
 
-    @Value("${bot.tokenTest}")
+    @Value("${bot.token}")
     String botToken;
 
     public static final String HELLO_TEXT = "Привет\n" +
